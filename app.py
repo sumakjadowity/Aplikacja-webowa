@@ -20,8 +20,8 @@ CORS(app)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'martynarutkowska7@gmail.com'
-app.config['MAIL_PASSWORD'] = 'jcuwsbmkqnoihesd'
+app.config['MAIL_USERNAME'] = 'mail'
+app.config['MAIL_PASSWORD'] = 'haslo'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -32,7 +32,7 @@ mail = Mail(app)
 @app.route("/mail", methods=['POST'])
 def email():
   msg = Message('Rozpoznanie zmiany skórnej',
-                sender='martynarutkowska7@gmail.com',
+                sender='mail',
                 recipients=[request.form.get("email")])
   msg.body = "Ten mail został wysłany ze strony xxx. Nie powinien być traktowany jako pewna diagnoza. Aplikacja służy do rozpoznawania łagodnych i złośliwych zmian skórnych." \
              "Aplikacja została oparta na sieci neuronowej o skuteczności 92%. Każdy wynik powinien został potwierdzony przez lekarza." \
